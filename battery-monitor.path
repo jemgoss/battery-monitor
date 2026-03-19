@@ -1,0 +1,9 @@
+[Unit]
+Description=Battery monitor
+
+[Path]
+PathModified=/sys/class/power_supply/BAT0/capacity
+#PathChanged=/sys/class/power_supply/BAT0/capacity
+
+[Install]
+WantedBy=default.target

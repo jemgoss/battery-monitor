@@ -1,0 +1,9 @@
+[Unit]
+Description=Battery monitor
+
+[Timer]
+OnStartupSec=10
+OnUnitActiveSec=60
+
+[Install]
+WantedBy=timers.target

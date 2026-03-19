@@ -1,0 +1,7 @@
+[Unit]
+Description=Battery change event
+
+[Service]
+Type=oneshot
+Environment=THRESHOLD=20
+ExecStart=/bin/sh -c '[[ $(</sys/class/power_supply/BAT0/capacity) -le $THRESHOLD && $(</sys/class/power_supply/BAT0/status) == "Discharging" ]] && notify-send -u critical "Battery Low" "Level is at $(</sys/class/power_supply/BAT0/capacity)%" || exit 0'
